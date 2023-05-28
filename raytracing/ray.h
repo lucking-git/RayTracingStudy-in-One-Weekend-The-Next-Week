@@ -6,11 +6,11 @@ public:
 	ray() {}
 	ray(const vec3& origin, const vec3& direction)
 		:orig(origin), dir(direction)
-	{}
-	vec3 origin() const { return orig; }
-	vec3 direction() const { return dir; }
+	{}//初始化光线  原点+t*方向
+	vec3 origin() const { return orig; }//返回光线原点
+	vec3 direction() const { return dir; }//返回光线方向
 
-	vec3 at(double t)const
+	vec3 at(double t)const  //返回光线
 	{
 		return orig + t * dir;
 	}
