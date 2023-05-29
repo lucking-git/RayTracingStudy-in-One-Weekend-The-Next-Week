@@ -45,6 +45,8 @@ public:
 		return e[0] * e[0] + e[1] * e[1] + e[2] * e[2];
 	}
 
+	
+
 
 	void write_color(std::ostream& out,int samples_per_pixel)
 	{
@@ -57,6 +59,31 @@ public:
 			<< static_cast<int>(256 * clamp(g, 0.0, 0.999)) << ' '
 			<< static_cast<int>(256 * clamp(b, 0.0, 0.999))<< '\n';
 	}
+
+	inline static vec3 random()
+	{
+		return vec3(random_double(), random_double(), random_double());
+	}
+
+	inline static vec3 random(double min, double max)
+	{
+		return vec3(random_double(min, max), random_double(min, max), random_double(min, max));
+	}
+
+
+	vec3 random_in_unit_sphere()
+	{
+		while (true)
+		{
+			auto p = vec3::random(-1, 1);
+			if (p.length_squared() >= 1)
+				continue;
+			return p;
+		}
+	}
+
+
+
 
 public:
 	double e[3];
