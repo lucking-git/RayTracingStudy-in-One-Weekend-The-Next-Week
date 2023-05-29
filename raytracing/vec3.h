@@ -1,7 +1,7 @@
 #pragma once
 #include <math.h>
 #include <iostream>
-
+#include "rtweekend.h"
 class vec3
 {
 public:
@@ -45,11 +45,17 @@ public:
 		return e[0] * e[0] + e[1] * e[1] + e[2] * e[2];
 	}
 
-	void write_color(std::ostream& out)
+
+	void write_color(std::ostream& out,int samples_per_pixel)
 	{
-		out << static_cast<int>(255.999 * e[0]) << ' '
-			<< static_cast<int>(255.999 * e[1]) << ' '
-			<< static_cast<int>(255.999 * e[2]) << '\n';
+		auto scale = 1.0 / samples_per_pixel;
+		auto r = scale * e[0];
+		auto g = scale * e[1];
+		auto b = scale * e[2];
+
+		out << static_cast<int>(256*clamp(r,0.0,0.999)) << ' '
+			<< static_cast<int>(256 * clamp(g, 0.0, 0.999)) << ' '
+			<< static_cast<int>(256 * clamp(b, 0.0, 0.999))<< '\n';
 	}
 
 public:
