@@ -1,4 +1,6 @@
-#pragma once
+
+#ifndef HITTABLE_H
+#define HITTABLE_H
 #include "ray.h"
 
 struct hit_record
@@ -25,3 +27,4 @@ public:
 
 };
 
+#endif
