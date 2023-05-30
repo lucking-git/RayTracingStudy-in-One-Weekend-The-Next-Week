@@ -49,9 +49,9 @@ double vec3::length_squared() const
 void vec3::write_color(std::ostream& out, int samples_per_pixel)
 {
 	auto scale = 1.0 / samples_per_pixel;
-	auto r = scale * e[0];
-	auto g = scale * e[1];
-	auto b = scale * e[2];
+	auto r = sqrt(scale * e[0]);
+	auto g = sqrt(scale * e[1]);
+	auto b = sqrt(scale * e[2]);
 
 	out << static_cast<int>(256 * clamp(r, 0.0, 0.999)) << ' '
 		<< static_cast<int>(256 * clamp(g, 0.0, 0.999)) << ' '

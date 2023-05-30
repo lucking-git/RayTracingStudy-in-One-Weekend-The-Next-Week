@@ -131,6 +131,7 @@
     <ClCompile Include="hittable.cpp" />
     <ClCompile Include="hittable_list.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="material.cpp" />
     <ClCompile Include="ray.cpp" />
     <ClCompile Include="rtweekend.cpp" />
     <ClCompile Include="sphere.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="camera.h" />
     <ClInclude Include="hittable.h" />
     <ClInclude Include="hittable_list.h" />
+    <ClInclude Include="material.h" />
     <ClInclude Include="random.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="rtweekend.h" />
