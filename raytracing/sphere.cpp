@@ -21,6 +21,7 @@ bool sphere::hit(const ray& r, double tmin, double tmax, hit_record& rec)const
 			rec.p = r.at(rec.t);
 			vec3 outward_normal = (rec.p - center) / radius;
 			rec.set_face_normal(r, outward_normal);
+			rec.mat_ptr = mat_ptr;
 			return true;
 		}
 		temp = (-half_b + root) / a;//对两个根都判断
