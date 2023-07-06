@@ -8,7 +8,7 @@ class camera
 {
 public:
 	camera();
-	camera(vec3 lookfrom, vec3 lookat, vec3 vup, double vfov, double aspect, double aperture, double focus_dist);
+	camera(vec3 lookfrom, vec3 lookat, vec3 vup, double vfov, double aspect, double aperture, double focus_dist,double t0,double t1);
 	
 	
 	ray get_ray(double u, double v);
@@ -22,6 +22,7 @@ public:
 	vec3 vertical;
 	vec3 u, v, w;
 	double lens_radius;
+	double time0, time1;
 };
 
 #endif

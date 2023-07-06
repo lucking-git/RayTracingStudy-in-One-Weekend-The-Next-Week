@@ -42,6 +42,27 @@
     <ClCompile Include="material.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="aabb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="perlin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="box.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="constant_medium.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vec3.h">
@@ -69,6 +90,27 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="material.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Desktop\2Dgame\include\stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="aabb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="perlin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="box.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="constant_medium.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

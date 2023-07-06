@@ -12,10 +12,12 @@ camera::camera()
 
 
 
-camera::camera(vec3 lookfrom, vec3 lookat, vec3 vup, double vfov, double aspect,double aperture,double focus_dist)
+camera::camera(vec3 lookfrom, vec3 lookat, vec3 vup, double vfov, double aspect, double aperture, double focus_dist, double t0 = 0, double t1 = 0)
 {
 	origin = lookfrom;//相机位置坐标
 	lens_radius = aperture / 2;
+	time0 = t0;
+	time1 = t1;
 
 
 	auto theta = degrees_to_radians(vfov);
@@ -36,6 +38,6 @@ ray camera::get_ray(double s, double t)
 {
 	vec3 rd = lens_radius * random_in_unit_disk();
 	vec3 offset = u * rd.x() + v * rd.y();
-	return ray(origin+offset, lower_left_corner + s * horizontal + t * vertical - origin-offset);
+	return ray(origin+offset, lower_left_corner + s * horizontal + t * vertical - origin-offset,random_double(time0,time1));
 }
 

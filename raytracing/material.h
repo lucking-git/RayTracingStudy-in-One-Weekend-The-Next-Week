@@ -1,18 +1,21 @@
 #pragma once
 #include "rtweekend.h"
+#include "texture.h"
 struct hit_record;
 
 
 class material
 {
 public:
+	virtual vec3 emitted(double u, double v, const vec3& p)const;
+
 	virtual bool scatter(const ray& r_in, const hit_record& rec, vec3& attenuation, ray& scattered)const = 0; 
 };
 
 class lambertian :public material
 {
 public:
-	lambertian(const vec3& a) :albedo(a) {}
+	lambertian(shared_ptr<texture> a) :albedo(a) {}
 
 	virtual bool scatter(const ray& r_in, const hit_record& rec, vec3& attenuation, ray& scattered) const;
 	
@@ -21,7 +24,7 @@ public:
 
 
 public:
-	vec3 albedo;
+	shared_ptr<texture> albedo;
 };
 
 
@@ -51,4 +54,32 @@ public:
 
 public:
 	double ref_idx;
+};
+
+
+class diffuse_light :public material
+{
+public:
+	diffuse_light(shared_ptr<texture> a);
+	virtual bool scatter(const ray& r_in, const hit_record& rec, vec3& attenuation, ray& scattered)const;
+
+	virtual vec3 emitted(double u, double v, const vec3& p)const;
+
+public:
+	shared_ptr<texture> emit;
+
+};
+
+
+class isotropic :public material
+{
+public:
+	isotropic(shared_ptr<texture> a);
+
+	virtual bool scatter(const ray& r_in, const hit_record& rec, vec3& attenuation, ray& scattered)const;
+
+
+
+public:
+	shared_ptr<texture> albedo;
 };
